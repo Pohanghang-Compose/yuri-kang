@@ -5,44 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c261e0f5-f262-42e7-b900-12aec60d88ed" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/androidTest/java/org/sopt/week1_profilecard/ExampleInstrumentedTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/main/java/org/sopt/week1_profilecard/MainActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/main/java/org/sopt/week1_profilecard/ui/theme/Color.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/main/java/org/sopt/week1_profilecard/ui/theme/Theme.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/main/java/org/sopt/week1_profilecard/ui/theme/Type.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/main/res/values/themes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/main/res/xml/backup_rules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/main/res/xml/data_extraction_rules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/app/src/test/java/org/sopt/week1_profilecard/ExampleUnitTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1-profileCard/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week1-profileCard/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/week1-profileCard/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,15 +26,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/Users/yuri3/yurikang/week1-profileCard"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/yuri3/yurikang/week1-profileCard&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="week1-pofilCard.app.main" />
