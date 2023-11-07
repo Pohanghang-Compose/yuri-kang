@@ -3,10 +3,8 @@ package org.sopt.week2_catalogapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -25,13 +23,11 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Week2catalogAppTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = Color.Gray,
-                ) {
-                    CatalogAppPreview()
-                }
+            Surface(
+                modifier = Modifier.fillMaxSize(),
+                color = Color.DarkGray,
+            ) {
+                CatalogAppPreview()
             }
         }
     }
@@ -42,12 +38,8 @@ fun ScrollList(data: State<List<Data>?>) {
     LazyColumn(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 30.dp, end = 30.dp, top = 10.dp, bottom = 30.dp),
+            .padding(start = 10.dp, end = 10.dp, top = 10.dp, bottom = 10.dp),
     ) {
-        item {
-            Spacer(modifier = Modifier.height(16.dp))
-        }
-
         data.value?.let {
             items(it) { item ->
                 ItemCard(item)
@@ -61,10 +53,6 @@ fun ScrollList(data: State<List<Data>?>) {
 fun CatalogAppPreview() {
     Week2catalogAppTheme {
         val dataListState = remember { mutableStateOf(dataList) }
-
-        dataList.forEach { data ->
-            ItemCard(data)
-        }
 
         ScrollList(dataListState)
     }

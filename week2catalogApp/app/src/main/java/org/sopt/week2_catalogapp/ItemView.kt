@@ -7,10 +7,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardColors
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -27,7 +25,7 @@ import org.sopt.week2_catalogapp.ui.theme.Week2catalogAppTheme
 fun ItemCard(data: Data) {
     Card(
         modifier = Modifier.fillMaxWidth().padding(bottom = 10.dp),
-        border = BorderStroke(2.dp, color = Color.DarkGray),
+        border = BorderStroke(1.dp, color = Color.LightGray),
     ) {
         ItemImage(
             imageResource = data.image,
@@ -42,7 +40,7 @@ fun ItemCard(data: Data) {
 fun ItemImage(imageResource: Int, content: String) {
     Column(
         verticalArrangement = Arrangement.Bottom,
-        modifier = Modifier.padding(10.dp)
+        modifier = Modifier.padding(10.dp),
     ) {
         val painter =
             rememberAsyncImagePainter(
