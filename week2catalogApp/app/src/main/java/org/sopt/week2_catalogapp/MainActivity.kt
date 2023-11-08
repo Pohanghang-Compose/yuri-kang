@@ -38,7 +38,7 @@ fun ScrollList(data: State<List<Data>?>) {
     LazyColumn(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 10.dp, end = 10.dp, top = 10.dp, bottom = 10.dp),
+            .padding(10.dp),
     ) {
         data.value?.let {
             items(it) { item ->
