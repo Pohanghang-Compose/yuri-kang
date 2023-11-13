@@ -4,7 +4,50 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c261e0f5-f262-42e7-b900-12aec60d88ed" name="Changes" comment="" />
+    <list default="true" id="c261e0f5-f262-42e7-b900-12aec60d88ed" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Week3/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/proguard-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/androidTest/java/org/sopt/week3/ExampleInstrumentedTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/main/java/org/sopt/week3/MainActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/main/java/org/sopt/week3/ui/theme/Color.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/main/java/org/sopt/week3/ui/theme/Theme.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/main/java/org/sopt/week3/ui/theme/Type.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/main/res/xml/backup_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/main/res/xml/data_extraction_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/app/src/test/java/org/sopt/week3/ExampleUnitTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Week3/settings.gradle" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +57,13 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="assignment/week2" />
+      </map>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -30,7 +80,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/Users/yuri3/yurikang/week2catalogApp"
+    "last_opened_file_path": "C:/Users/yuri3/compose-study"
   }
 }]]></component>
   <component name="RunManager">
