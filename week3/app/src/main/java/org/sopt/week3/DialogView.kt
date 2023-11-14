@@ -32,6 +32,7 @@ import org.sopt.week3.ui.theme.Week3Theme
 @Composable
 fun SurveyDialog(showDialog: MutableState<Boolean>) {
     val surveyScores = remember { mutableStateListOf(0) }
+    val totalScore = remember { mutableStateOf(0) }
 
     if (showDialog.value) {
         AlertDialog(
@@ -54,8 +55,9 @@ fun SurveyDialog(showDialog: MutableState<Boolean>) {
             confirmButton = {
                 Button(
                     onClick = {
-                        val totalScore = surveyScores.sum()
+                        totalScore.value = surveyScores.sum()
                         showDialog.value = false
+
                         Log.d("합산 점수", totalScore.toString())
                         surveyScores.clear()
                     },
@@ -66,6 +68,7 @@ fun SurveyDialog(showDialog: MutableState<Boolean>) {
             modifier = Modifier.fillMaxSize(),
         )
     }
+    ScoreCanvas(((totalScore.value * 7.2f) / 180 * 100).toInt())
 }
 
 @Composable

@@ -34,7 +34,7 @@ fun SurveyScreen() {
     Column {
         SurveyBtn(showDialog)
         SurveyDialog(showDialog)
-        ScoreCanvas(10)
+        // ScoreCanvas(10)
     }
 }
 
@@ -56,7 +56,7 @@ fun SurveyBtn(showDialog: MutableState<Boolean>) {
     }
 }
 
-// 점수 텍스트
+// 텍스트
 @Composable
 fun BasicText(text: String, color: Color) {
     Text(
@@ -67,7 +67,7 @@ fun BasicText(text: String, color: Color) {
 }
 
 @Composable
-fun ScoreCanvas(score: Int) {
+fun ScoreCanvas(totalScore: Int) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -105,7 +105,7 @@ fun ScoreCanvas(score: Int) {
             )
 
             drawContext.canvas.nativeCanvas.drawText(
-                score.toString(),
+                totalScore.toString(),
                 textPosition2.x,
                 textPosition2.y,
                 Paint().apply {
