@@ -1,6 +1,9 @@
 package org.sopt.week3
 
 import android.graphics.Paint
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -12,6 +15,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -34,7 +38,6 @@ fun SurveyScreen() {
     Column {
         SurveyBtn(showDialog)
         SurveyDialog(showDialog)
-        // ScoreCanvas(10)
     }
 }
 
@@ -68,6 +71,16 @@ fun BasicText(text: String, color: Color) {
 
 @Composable
 fun ScoreCanvas(totalScore: Int) {
+    val animatedValue = remember { Animatable(0f) }
+
+    // 특정 값으로 색을 채우는 Animation
+    LaunchedEffect(Unit) {
+        animatedValue.animateTo(
+            targetValue = totalScore.toFloat(),
+            animationSpec = tween(durationMillis = 2000, easing = LinearEasing),
+        )
+    }
+
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -79,7 +92,7 @@ fun ScoreCanvas(totalScore: Int) {
 
             drawArc(
                 color = Color.Gray,
-                startAngle = -180f, // 시작 각도
+                startAngle = 180f, // 시작 각도
                 sweepAngle = 180f, // 돌아갈 각도
                 useCenter = false, // 호가 경계 중심부에 닿는가
                 topLeft = Offset(
@@ -89,6 +102,20 @@ fun ScoreCanvas(totalScore: Int) {
                 size = sizeArc,
                 style = Stroke(width = 25f),
             )
+
+            drawArc(
+                color = Color.Red,
+                startAngle = 180f,
+                sweepAngle = totalScore.toFloat(),
+                useCenter = false,
+                topLeft = Offset(
+                    (size.width - sizeArc.width) / 2f,
+                    (size.height - sizeArc.height) / 2f,
+                ),
+                size = sizeArc,
+                style = Stroke(width = 25f),
+            )
+
             val textPosition1 = center + Offset(-0f, -150f)
             val textPosition2 = center + Offset(-0f, -40f)
 
