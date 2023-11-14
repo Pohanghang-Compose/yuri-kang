@@ -5,10 +5,12 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
+import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.DropdownMenu
@@ -57,6 +59,7 @@ fun SurveyDialog(showDialog: MutableState<Boolean>) {
 @Composable
 fun Survey(text: String) {
     val isMenuExpandedState = remember { mutableStateOf(false) }
+    var selectedMenuItem = remember { mutableStateOf(0) }
 
     Row(modifier = Modifier.padding(10.dp)) {
         BasicText(text, Color.Black)
@@ -78,36 +81,58 @@ fun Survey(text: String) {
             Log.d("클릭", isMenuExpandedState.value.toString())
 
             // 메뉴
-            DropDownMenu(isMenuExpandedState)
+            DropDownMenu(isMenuExpandedState) { menuItem ->
+                selectedMenuItem.value = menuItem
+
+                // ScoreStar(menuItem)
+                Log.d("점수", selectedMenuItem.value.toString())
+            }
         }
     }
 }
 
 @Composable
-fun DropDownMenu(isMenuExpanded: MutableState<Boolean>) {
+fun ScoreStar(score: Int) {
+    Row(modifier = Modifier.padding(horizontal = 5.dp, vertical = 6.dp)) {
+        repeat(score) {
+            Icon(
+                imageVector = Icons.Default.Star,
+                tint = Color.Yellow,
+                contentDescription = "점수",
+                modifier = Modifier.size(20.dp),
+            )
+        }
+    }
+}
+
+@Composable
+fun DropDownMenu(isMenuExpanded: MutableState<Boolean>, onMenuItemClick: (Int) -> Unit) {
     DropdownMenu(
         modifier = Modifier.wrapContentSize(),
         expanded = isMenuExpanded.value,
         onDismissRequest = { isMenuExpanded.value = false },
     ) {
-        DropdownMenuItem(1)
-        DropdownMenuItem(2)
-        DropdownMenuItem(3)
-        DropdownMenuItem(4)
-        DropdownMenuItem(5)
+        DropdownMenuItem(1, onMenuItemClick)
+        DropdownMenuItem(2, onMenuItemClick)
+        DropdownMenuItem(3, onMenuItemClick)
+        DropdownMenuItem(4, onMenuItemClick)
+        DropdownMenuItem(5, onMenuItemClick)
     }
 }
 
 // 점수 메뉴 아이템
 @Composable
-fun DropdownMenuItem(score: Int) {
-    DropdownMenuItem({ Text(text = score.toString()) }, onClick = { print("아이템 1 클릭") })
+fun DropdownMenuItem(score: Int, onMenuItemClick: (Int) -> Unit) {
+    DropdownMenuItem(
+        { Text(text = score.toString()) },
+        onClick = { onMenuItemClick(score) },
+    )
 }
 
 @Preview(showBackground = true)
 @Composable
 fun Preview() {
     Week3Theme {
-        Survey("1")
+        ScoreStar(5)
     }
 }
