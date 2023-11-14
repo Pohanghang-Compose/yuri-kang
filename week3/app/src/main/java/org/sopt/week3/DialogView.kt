@@ -1,5 +1,7 @@
 package org.sopt.week3
 
+import android.util.Log
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
@@ -15,10 +17,8 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
@@ -26,53 +26,44 @@ import androidx.compose.ui.unit.dp
 import org.sopt.week3.ui.theme.Week3Theme
 
 @Composable
-fun SurveyDialog() {
-    var showDialog by remember { mutableStateOf(false) }
-
-    Column {
-        // 설문조사 하기 버튼
-        SurveyBtn(onClick = { showDialog = true })
-
-        if (showDialog) {
-            AlertDialog(
-                onDismissRequest = {
-                    showDialog = false
-                },
-                title = {
-                    Text(text = "설문조사 LIST")
-                },
-                text = {
-                    Column {
-                        Survey("컴포즈 스터디 만족도")
-                        Survey("컴포즈 스터디 난이도")
-                        Survey("오늘 점심 메뉴 만족도")
-                        Survey("솝트 만족도")
-                    }
-                },
-                confirmButton = {
-                    Button(
-                        onClick = {
-                            showDialog = false
-                        },
-                    ) {
-                        Text("제출하기")
-                    }
-                },
-            )
-        }
+fun SurveyDialog(showDialog: MutableState<Boolean>) {
+    if (showDialog.value) {
+        AlertDialog(
+            onDismissRequest = { showDialog.value = false },
+            title = {
+                Text(text = "설문조사 LIST")
+            },
+            text = {
+                Column {
+                    Survey("컴포즈 스터디 만족도")
+                    Survey("컴포즈 스터디 난이도")
+                    Survey("오늘 점심 메뉴 만족도")
+                    Survey("솝트 만족도")
+                }
+            },
+            confirmButton = {
+                Button(
+                    onClick = {
+                        showDialog.value = false
+                    },
+                ) {
+                    Text("제출하기")
+                }
+            },
+        )
     }
 }
 
 @Composable
 fun Survey(text: String) {
     val isMenuExpandedState = remember { mutableStateOf(false) }
-    // var isMenuExpanded by isMenuExpandedState
 
     Row(modifier = Modifier.padding(10.dp)) {
         BasicText(text, Color.Black)
 
         Column() {
             // 메뉴 다운 버튼
+
             Icon(
                 imageVector = if (isMenuExpandedState.value) {
                     Icons.Default.KeyboardArrowUp
@@ -80,7 +71,11 @@ fun Survey(text: String) {
                     Icons.Default.KeyboardArrowDown
                 },
                 contentDescription = text,
+                modifier = Modifier.clickable {
+                    isMenuExpandedState.value = !isMenuExpandedState.value
+                },
             )
+            Log.d("클릭", isMenuExpandedState.value.toString())
 
             // 메뉴
             DropDownMenu(isMenuExpandedState)
@@ -113,6 +108,6 @@ fun DropdownMenuItem(score: Int) {
 @Composable
 fun Preview() {
     Week3Theme {
-        SurveyDialog()
+        Survey("1")
     }
 }
