@@ -21,7 +21,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.ui.graphics.toArgb
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -64,17 +63,6 @@ fun BasicText(text: String, color: Color) {
         text = text,
         textAlign = TextAlign.Center,
         color = color,
-    )
-}
-
-// 점수
-@Composable
-fun TotalScore(score: Int) {
-    Text(
-        text = score.toString(),
-        textAlign = TextAlign.Center,
-        color = Color.Red,
-        fontWeight = FontWeight.Bold,
     )
 }
 
