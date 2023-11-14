@@ -84,11 +84,11 @@ fun Survey(text: String) {
             DropDownMenu(isMenuExpandedState) { menuItem ->
                 selectedMenuItem.value = menuItem
 
-                // ScoreStar(menuItem)
                 Log.d("점수", selectedMenuItem.value.toString())
             }
         }
     }
+    ScoreStar(selectedMenuItem.value)
 }
 
 @Composable
