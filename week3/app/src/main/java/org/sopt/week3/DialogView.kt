@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
@@ -19,6 +20,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
@@ -29,37 +31,47 @@ import org.sopt.week3.ui.theme.Week3Theme
 
 @Composable
 fun SurveyDialog(showDialog: MutableState<Boolean>) {
+    val surveyScores = remember { mutableStateListOf(0) }
+
     if (showDialog.value) {
         AlertDialog(
-            onDismissRequest = { showDialog.value = false },
+            onDismissRequest = {
+                surveyScores.clear()
+                showDialog.value = false
+            },
             title = {
                 Text(text = "설문조사 LIST")
             },
             text = {
                 Column {
-                    Survey("컴포즈 스터디 만족도")
-                    Survey("컴포즈 스터디 난이도")
-                    Survey("오늘 점심 메뉴 만족도")
-                    Survey("솝트 만족도")
+                    Survey("컴포즈 스터디 만족도") { score -> surveyScores.add(score) }
+                    Survey("컴포즈 스터디 난이도") { score -> surveyScores.add(score) }
+                    Survey("오늘 점심 메뉴 만족도") { score -> surveyScores.add(score) }
+                    Survey("오늘 저녁 메뉴 만족도") { score -> surveyScores.add(score) }
+                    Survey("솝트 만족도") { score -> surveyScores.add(score) }
                 }
             },
             confirmButton = {
                 Button(
                     onClick = {
+                        val totalScore = surveyScores.sum()
                         showDialog.value = false
+                        Log.d("합산 점수", totalScore.toString())
+                        surveyScores.clear()
                     },
                 ) {
                     Text("제출하기")
                 }
             },
+            modifier = Modifier.fillMaxSize(),
         )
     }
 }
 
 @Composable
-fun Survey(text: String) {
+fun Survey(text: String, onScoreSelected: (Int) -> Unit) {
     val isMenuExpandedState = remember { mutableStateOf(false) }
-    var selectedMenuItem = remember { mutableStateOf(0) }
+    val selectedMenuItem = remember { mutableStateOf(0) }
 
     Row(modifier = Modifier.padding(10.dp)) {
         BasicText(text, Color.Black)
@@ -85,6 +97,7 @@ fun Survey(text: String) {
                 selectedMenuItem.value = menuItem
 
                 Log.d("점수", selectedMenuItem.value.toString())
+                onScoreSelected(selectedMenuItem.value)
             }
         }
     }
@@ -93,7 +106,7 @@ fun Survey(text: String) {
 
 @Composable
 fun ScoreStar(score: Int) {
-    Row(modifier = Modifier.padding(horizontal = 5.dp, vertical = 6.dp)) {
+    Row(modifier = Modifier.padding(horizontal = 5.dp)) {
         repeat(score) {
             Icon(
                 imageVector = Icons.Default.Star,
