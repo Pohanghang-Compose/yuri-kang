@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c261e0f5-f262-42e7-b900-12aec60d88ed" name="Changes" comment="[Assignment/week3] 파일 이름 변경">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c261e0f5-f262-42e7-b900-12aec60d88ed" name="Changes" comment="[Assignment/week3] 파일 이름 변경" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +37,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/Users/yuri3/compose-study"
+    "last_opened_file_path": "C:/Users/yuri3/compose-study/week3"
   }
 }]]></component>
   <component name="RunManager">

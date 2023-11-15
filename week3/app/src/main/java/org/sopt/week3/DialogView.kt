@@ -58,7 +58,7 @@ fun SurveyDialog(showDialog: MutableState<Boolean>) {
                         totalScore.value = surveyScores.sum()
                         showDialog.value = false
 
-                        Log.d("합산 점수", totalScore.toString())
+                        Log.d("합산 점수", totalScore.value.toString())
                         surveyScores.clear()
                     },
                 ) {
@@ -68,7 +68,7 @@ fun SurveyDialog(showDialog: MutableState<Boolean>) {
             modifier = Modifier.fillMaxSize(),
         )
     }
-    ScoreCanvas(((totalScore.value * 7.2f) / 180 * 100).toInt())
+    ScoreCanvas(totalScore.value)
 }
 
 @Composable

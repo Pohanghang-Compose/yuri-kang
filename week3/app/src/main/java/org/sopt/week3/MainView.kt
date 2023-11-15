@@ -1,9 +1,7 @@
 package org.sopt.week3
 
 import android.graphics.Paint
-import androidx.compose.animation.core.Animatable
-import androidx.compose.animation.core.LinearEasing
-import androidx.compose.animation.core.tween
+import android.util.Log
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -12,10 +10,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -26,9 +24,7 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import org.sopt.week3.ui.theme.Week3Theme
 
 // 메인 스크린
 @Composable
@@ -47,7 +43,7 @@ fun SurveyBtn(showDialog: MutableState<Boolean>) {
     Column(
         modifier = Modifier
             .padding(vertical = 8.dp)
-            .fillMaxWidth(),
+            .wrapContentSize(),
         verticalArrangement = Arrangement.Bottom,
     ) {
         Button(
@@ -71,6 +67,7 @@ fun BasicText(text: String, color: Color) {
 
 @Composable
 fun ScoreCanvas(totalScore: Int) {
+    /*
     val animatedValue = remember { Animatable(0f) }
 
     // 특정 값으로 색을 채우는 Animation
@@ -80,6 +77,7 @@ fun ScoreCanvas(totalScore: Int) {
             animationSpec = tween(durationMillis = 2000, easing = LinearEasing),
         )
     }
+*/
 
     Box(
         modifier = Modifier
@@ -106,7 +104,7 @@ fun ScoreCanvas(totalScore: Int) {
             drawArc(
                 color = Color.Red,
                 startAngle = 180f,
-                sweepAngle = totalScore.toFloat(),
+                sweepAngle = totalScore * 7.2f,
                 useCenter = false,
                 topLeft = Offset(
                     (size.width - sizeArc.width) / 2f,
@@ -116,6 +114,7 @@ fun ScoreCanvas(totalScore: Int) {
                 style = Stroke(width = 25f),
             )
 
+            // Arc 내 텍스트가 보여질 위치
             val textPosition1 = center + Offset(-0f, -150f)
             val textPosition2 = center + Offset(-0f, -40f)
 
@@ -131,8 +130,11 @@ fun ScoreCanvas(totalScore: Int) {
                 },
             )
 
+            val drawScore = (totalScore * 7.2f / 180 * 100).toInt()
+            Log.d("그림 그려질 범위", drawScore.toString())
+
             drawContext.canvas.nativeCanvas.drawText(
-                totalScore.toString(),
+                drawScore.toString(),
                 textPosition2.x,
                 textPosition2.y,
                 Paint().apply {
@@ -143,13 +145,5 @@ fun ScoreCanvas(totalScore: Int) {
                 },
             )
         }
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun MainPreview() {
-    Week3Theme {
-        ScoreCanvas(10)
     }
 }
