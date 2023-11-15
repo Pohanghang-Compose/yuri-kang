@@ -25,9 +25,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import org.sopt.week3.ui.theme.Week3Theme
 
 @Composable
 fun SurveyDialog(showDialog: MutableState<Boolean>) {
@@ -36,6 +34,7 @@ fun SurveyDialog(showDialog: MutableState<Boolean>) {
 
     if (showDialog.value) {
         AlertDialog(
+            modifier = Modifier.fillMaxSize().padding(vertical = 150.dp),
             onDismissRequest = {
                 surveyScores.clear()
                 showDialog.value = false
@@ -65,7 +64,6 @@ fun SurveyDialog(showDialog: MutableState<Boolean>) {
                     Text("제출하기")
                 }
             },
-            modifier = Modifier.fillMaxSize(),
         )
     }
     ScoreCanvas(totalScore.value)
@@ -143,12 +141,4 @@ fun DropdownMenuItem(score: Int, onMenuItemClick: (Int) -> Unit) {
         { Text(text = score.toString()) },
         onClick = { onMenuItemClick(score) },
     )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun Preview() {
-    Week3Theme {
-        ScoreStar(5)
-    }
 }
