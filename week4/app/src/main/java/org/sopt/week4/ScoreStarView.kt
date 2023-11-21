@@ -55,7 +55,7 @@ fun Survey(text: String, onScoreSelected: (Int) -> Unit) {
     val isMenuExpandedState = remember { mutableStateOf(false) }
     val selectedMenuItem = remember { mutableStateOf(0) }
 
-    Row() {
+    Row(modifier = Modifier.padding(vertical = 13.dp)) {
         BasicText(text, Color.Black)
 
         Column() {
@@ -88,7 +88,7 @@ fun Survey(text: String, onScoreSelected: (Int) -> Unit) {
 
 @Composable
 fun ScoreStar(score: Int) {
-    Row(modifier = Modifier.padding( bottom = 15.dp)) {
+    Row(modifier = Modifier.padding(bottom = 15.dp)) {
         if (score == 0) {
             Spacer(modifier = Modifier.size(20.dp))
         } else {
