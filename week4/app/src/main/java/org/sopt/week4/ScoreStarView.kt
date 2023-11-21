@@ -111,11 +111,9 @@ fun DropDownMenu(isMenuExpanded: MutableState<Boolean>, onMenuItemClick: (Int) -
         expanded = isMenuExpanded.value,
         onDismissRequest = { isMenuExpanded.value = false },
     ) {
-        DropdownMenuItem(1, onMenuItemClick)
-        DropdownMenuItem(2, onMenuItemClick)
-        DropdownMenuItem(3, onMenuItemClick)
-        DropdownMenuItem(4, onMenuItemClick)
-        DropdownMenuItem(5, onMenuItemClick)
+        repeat(5) {
+            DropdownMenuItem(it + 1, onMenuItemClick)
+        }
     }
 }
 
