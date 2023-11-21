@@ -40,13 +40,9 @@ fun ScoreStar() {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Survey("컴포즈 스터디 만족도") { score -> surveyScores.add(score) }
-        Spacer(modifier = Modifier.padding(top = 50.dp))
         Survey("컴포즈 스터디 난이도") { score -> surveyScores.add(score) }
-        Spacer(modifier = Modifier.padding(top = 50.dp))
         Survey("오늘 점심 메뉴 만족도") { score -> surveyScores.add(score) }
-        Spacer(modifier = Modifier.padding(top = 50.dp))
         Survey("오늘 저녁 메뉴 만족도") { score -> surveyScores.add(score) }
-        Spacer(modifier = Modifier.padding(top = 50.dp))
         Survey("솝트 만족도") { score -> surveyScores.add(score) }
     }
 
@@ -92,7 +88,7 @@ fun Survey(text: String, onScoreSelected: (Int) -> Unit) {
 
 @Composable
 fun ScoreStar(score: Int) {
-    Row(modifier = Modifier.padding(horizontal = 5.dp)) {
+    Row(modifier = Modifier.padding( bottom = 15.dp)) {
         if (score == 0) {
             Spacer(modifier = Modifier.size(20.dp))
         } else {
