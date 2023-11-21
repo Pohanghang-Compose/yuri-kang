@@ -93,13 +93,17 @@ fun Survey(text: String, onScoreSelected: (Int) -> Unit) {
 @Composable
 fun ScoreStar(score: Int) {
     Row(modifier = Modifier.padding(horizontal = 5.dp)) {
-        repeat(score) {
-            Icon(
-                imageVector = Icons.Default.Star,
-                tint = Color.Yellow,
-                contentDescription = "점수",
-                modifier = Modifier.size(20.dp),
-            )
+        if (score == 0) {
+            Spacer(modifier = Modifier.size(20.dp))
+        } else {
+            repeat(score) {
+                Icon(
+                    imageVector = Icons.Default.Star,
+                    tint = Color.Yellow,
+                    contentDescription = "점수",
+                    modifier = Modifier.size(20.dp),
+                )
+            }
         }
     }
 }
