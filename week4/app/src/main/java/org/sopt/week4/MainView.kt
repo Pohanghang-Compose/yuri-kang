@@ -1,5 +1,10 @@
 package org.sopt.week4
 
+// for a 'val' variable
+
+// for a `var` variable also add
+
+// or just
 import android.graphics.Paint
 import android.util.Log
 import androidx.compose.foundation.Canvas
@@ -11,6 +16,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
@@ -23,9 +32,11 @@ import androidx.compose.ui.unit.dp
 // 메인 스크린
 @Composable
 fun MainScreen() {
-    Column() {
-        ScoreCanvas(1)
-        ScoreStar()
+    var totalScore by remember { mutableStateOf(0) }
+
+    Column {
+        ScoreCanvas(totalScore)
+        ScoreStar { newTotalScore -> totalScore = newTotalScore }
     }
 }
 

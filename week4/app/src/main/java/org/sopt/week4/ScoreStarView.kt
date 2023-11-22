@@ -25,14 +25,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import org.sopt.week4.ui.theme.Week4Theme
 
 @Composable
-fun ScoreStar() {
+fun ScoreStar(onTotalScoreChanged: (Int) -> Unit) {
     val surveyScores = remember { mutableStateListOf(0) }
-    val totalScore = remember { mutableStateOf(0) }
+    val sumScore = remember { mutableStateOf(0) }
 
     Column(
         modifier = Modifier.fillMaxSize().padding(top = 30.dp),
@@ -46,8 +44,8 @@ fun ScoreStar() {
         Survey("솝트 만족도") { score -> surveyScores.add(score) }
     }
 
-    totalScore.value = surveyScores.sum()
-    surveyScores.clear()
+    sumScore.value = surveyScores.sum()
+    onTotalScoreChanged(sumScore.value)
 }
 
 @Composable
@@ -124,12 +122,4 @@ fun DropdownMenuItem(score: Int, onMenuItemClick: (Int) -> Unit) {
         { Text(text = score.toString()) },
         onClick = { onMenuItemClick(score) },
     )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun Preview() {
-    Week4Theme {
-        ScoreStar()
-    }
 }
