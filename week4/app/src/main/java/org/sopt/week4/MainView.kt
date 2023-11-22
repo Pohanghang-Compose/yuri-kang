@@ -7,6 +7,8 @@ package org.sopt.week4
 // or just
 import android.graphics.Paint
 import android.util.Log
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -16,6 +18,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -63,6 +66,18 @@ fun ScoreCanvas(totalScore: Int) {
         )
     }
 */
+    var animationPlayed by remember { mutableStateOf(false) }
+    val moveValue: Float = totalScore * 7.2f
+    val curValue = animateFloatAsState(
+        targetValue = if (animationPlayed) moveValue else 0f,
+        animationSpec = tween(
+            durationMillis = 2000,
+            delayMillis = 0,
+        ),
+    )
+    LaunchedEffect(key1 = animationPlayed) {
+        animationPlayed = true
+    }
 
     Box(
         modifier = Modifier
@@ -90,7 +105,7 @@ fun ScoreCanvas(totalScore: Int) {
             drawArc(
                 color = Color.Red,
                 startAngle = 180f,
-                sweepAngle = totalScore * 7.2f,
+                sweepAngle = curValue.value,
                 useCenter = false,
                 topLeft = Offset(
                     (size.width - sizeArc.width) / 2f,
@@ -116,7 +131,7 @@ fun ScoreCanvas(totalScore: Int) {
                 },
             )
 
-            val drawScore = (totalScore * 7.2f / 180 * 100).toInt()
+            val drawScore = (moveValue / 180 * 100).toInt()
             Log.d("그림 그려질 범위", drawScore.toString())
 
             drawContext.canvas.nativeCanvas.drawText(
