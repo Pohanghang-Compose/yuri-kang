@@ -30,21 +30,21 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun ScoreStar(onTotalScoreChanged: (Int) -> Unit) {
-    val surveyScores = remember { mutableStateListOf(0) }
-    val sumScore = remember { mutableStateOf(0) }
+    val surveyScores = remember { mutableStateListOf(0, 0, 0, 0, 0) }
 
     Column(
         modifier = Modifier.fillMaxSize().padding(top = 30.dp),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Survey("컴포즈 스터디 만족도") { score -> surveyScores.add(score) }
-        Survey("컴포즈 스터디 난이도") { score -> surveyScores.add(score) }
-        Survey("오늘 점심 메뉴 만족도") { score -> surveyScores.add(score) }
-        Survey("오늘 저녁 메뉴 만족도") { score -> surveyScores.add(score) }
-        Survey("솝트 만족도") { score -> surveyScores.add(score) }
+        Survey("컴포즈 스터디 만족도") { score -> surveyScores[0] = score }
+        Survey("컴포즈 스터디 난이도") { score -> surveyScores[1] = score }
+        Survey("오늘 점심 메뉴 만족도") { score -> surveyScores[2] = score }
+        Survey("오늘 저녁 메뉴 만족도") { score -> surveyScores[3] = score }
+        Survey("솝트 만족도") { score -> surveyScores[4] = score }
     }
 
+    val sumScore = remember { mutableStateOf(0) }
     sumScore.value = surveyScores.sum()
     onTotalScoreChanged(sumScore.value)
 }

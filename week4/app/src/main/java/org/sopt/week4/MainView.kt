@@ -55,17 +55,6 @@ fun BasicText(text: String, color: Color) {
 
 @Composable
 fun ScoreCanvas(totalScore: Int) {
-    /*
-    val animatedValue = remember { Animatable(0f) }
-
-    // 특정 값으로 색을 채우는 Animation
-    LaunchedEffect(Unit) {
-        animatedValue.animateTo(
-            targetValue = totalScore.toFloat(),
-            animationSpec = tween(durationMillis = 2000, easing = LinearEasing),
-        )
-    }
-*/
     var animationPlayed by remember { mutableStateOf(false) }
     val moveValue: Float = totalScore * 7.2f
     val curValue = animateFloatAsState(
