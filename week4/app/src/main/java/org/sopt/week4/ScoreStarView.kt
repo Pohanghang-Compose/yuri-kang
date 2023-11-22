@@ -79,6 +79,7 @@ fun Survey(text: String, onScoreSelected: (Int) -> Unit) {
 
                 Log.d("점수", selectedMenuItem.value.toString())
                 onScoreSelected(selectedMenuItem.value)
+                isMenuExpandedState.value = !isMenuExpandedState.value
             }
         }
     }

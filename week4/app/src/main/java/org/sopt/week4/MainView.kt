@@ -31,6 +31,7 @@ import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import kotlin.math.ceil
 
 // 메인 스크린
 @Composable
@@ -120,7 +121,7 @@ fun ScoreCanvas(totalScore: Int) {
                 },
             )
 
-            val drawScore = (moveValue / 180 * 100).toInt()
+            val drawScore = ceil(moveValue / 180 * 100).toInt()
             Log.d("그림 그려질 범위", drawScore.toString())
 
             drawContext.canvas.nativeCanvas.drawText(
