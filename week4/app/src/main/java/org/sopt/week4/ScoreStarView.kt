@@ -1,6 +1,7 @@
 package org.sopt.week4
 
 import android.util.Log
+import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -86,7 +87,7 @@ fun Survey(text: String, onScoreSelected: (Int) -> Unit) {
 
 @Composable
 fun ScoreStar(score: Int) {
-    Row(modifier = Modifier.padding(bottom = 15.dp)) {
+    Row(modifier = Modifier.padding(bottom = 15.dp).animateContentSize()) { // 애니메이션 추가
         if (score == 0) {
             Spacer(modifier = Modifier.size(20.dp))
         } else {
