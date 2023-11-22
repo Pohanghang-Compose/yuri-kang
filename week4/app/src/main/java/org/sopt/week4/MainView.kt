@@ -1,10 +1,5 @@
 package org.sopt.week4
 
-// for a 'val' variable
-
-// for a `var` variable also add
-
-// or just
 import android.graphics.Paint
 import android.util.Log
 import androidx.compose.animation.core.animateFloatAsState
